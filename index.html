@@ -4,10 +4,12 @@
   </p>
   </body>
   <script>
-    fetch('https://script.google.com/macros/s/AKfycbz4VKbbgskznFnxDqhzGPlsdidI-Dy3nDb-7X3mv7S_q1Cd0XngBsxSfiPfvhWieYPu5A/exec')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data); // 這裡就會看到你 Google 表格裡的完美資料囉！
-    });
+    fetch("https://script.google.com/macros/s/AKfycbz4VKbbgskznFnxDqhzGPlsdidI-Dy3nDb-7X3mv7S_q1Cd0XngBsxSfiPfvhWieYPu5A/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8" // 👈 必須改成這樣來繞過 CORS 檢查
+      },
+      body: JSON.stringify(data)
+    })
   </script>
 </html>
