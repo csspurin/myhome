@@ -4,12 +4,21 @@
   </p>
   </body>
   <script>
+
     fetch("https://script.google.com/macros/s/AKfycbyKQCy9u0r8vjjjSxMVMgIjlwqpjsh8yM4wTSu0F_Zm/dev", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8" // 👈 必須改成這樣來繞過 CORS 檢查
-      },
-      body: JSON.stringify(data)
+      method: "GET" // 👈 必須改成 GET，而且這裡絕對不能有 body！
     })
+    .then(res => res.json()) // 2. 將回傳的文字轉成 JSON 物件
+    .then(rows => {
+      // 3. 這裡的 rows 就是你 Google Sheets 裡面的所有資料了！
+      console.log("成功拿到資料：", rows);
+      
+      // 範例：你可以用來把資料渲染到網頁畫面上
+      // alert(JSON.stringify(rows)); 
+    })
+    .catch(err => {
+      console.error("抓取資料失敗：", err);
+    });
+
   </script>
 </html>
