@@ -8,7 +8,24 @@
     
 		
 <link rel="stylesheet" type="text/css" href="files/main_style.css" title="wsite-theme-css" />
+<script src='files/jquery-1.8.3.min.js'></script>
 
+<script src="files/main.js"></script>
+
+<script>	
+	
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"368998292326738921","title":"About","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"206938353437099375","title":"plurk link","url":"plurk-link.html","target":"","nav_menu":false,"nonclickable":false},{"id":"219097846860608418","title":"other","url":"other.html","target":"","nav_menu":false,"nonclickable":false}],
+			"368998292326738921",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t\t\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+</script>
 
 <style type='text/css'>
 .wsite-header {
@@ -101,7 +118,7 @@
 	class="wsite-menu-subitem-wrap "
 	>
 	<a
-				href="animate"
+				href="animate.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -234,7 +251,7 @@
 	class="wsite-menu-subitem-wrap "
 	>
 	<a
-				href="animate"
+				href="animate.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
